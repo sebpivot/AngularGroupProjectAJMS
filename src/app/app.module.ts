@@ -20,6 +20,9 @@ import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
 import { ProfComponent } from './prof/prof.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CourseComponent } from './course/course.component';
+import {CourseService} from './services/course.service';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
@@ -32,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'students/:id', component: StudentDetailsComponent},
   { path: 'teachers', component: ProfListViewComponent},
   { path: 'teachers/:id', component: ProfDetailsComponent},
+  { path: 'courses', component: CoursesListComponent},
   { path: '', component: MainPageComponent}
 
 ];
@@ -49,7 +53,9 @@ const appRoutes: Routes = [
     ProfDetailsComponent,
     ProfComponent,
     MainPageComponent,
-    StudentComponent
+    StudentComponent,
+    CoursesListComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +67,8 @@ const appRoutes: Routes = [
     AppareilService,
     AuthService,
     StudentService,
-    TeacherService
+    CourseService,
+    TeacherService,
   ],
   bootstrap: [AppComponent]
 })
