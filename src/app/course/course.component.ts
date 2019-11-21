@@ -11,6 +11,7 @@ export class CourseComponent implements OnInit {
   @Input() courseName;
   @Input() courseCredit;
   @Input() courseId;
+  @Input() index;
   courses: any[];
 
   constructor(private courseService: CourseService ) { }

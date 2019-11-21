@@ -15,12 +15,12 @@ export class CourseService {
     {
       id: 1,
       name: 'Math',
-      credits: '25',
+      credit: '25',
     },
     {
       id: 2,
       name: 'French',
-      credits: '50',
+      credit: '50',
     },
   ];
 
