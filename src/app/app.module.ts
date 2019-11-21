@@ -18,16 +18,18 @@ import { ProfListViewComponent } from './prof-list-view/prof-list-view.component
 import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
 import { ProfComponent } from './prof/prof.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
-  { path: '', component: AppareilViewComponent },
+/*  { path: '', component: AppareilViewComponent },*/
   { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
   { path: 'teachers', component: ProfListViewComponent},
-  { path: 'teachers/:id', component: ProfDetailsComponent}
+  { path: 'teachers/:id', component: ProfDetailsComponent},
+  { path: '', component: MainPageComponent}
 
 ];
 
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     StudentDetailsComponent,
     ProfListViewComponent,
     ProfDetailsComponent,
-    ProfComponent
+    ProfComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
