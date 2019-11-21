@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
   { path: 'students', component: StudentListViewComponent},
-  { path: 'students/:id', component: StudentDetailsComponent}
+  { path: 'students/:id', component: StudentDetailsComponent},
 /*  { path: '', component: AppareilViewComponent },*/
   { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
