@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
   { path: '', component: AppareilViewComponent },
-  { path: 'studentList', component: StudentListViewComponent}
+  { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent}
 
 ];
@@ -32,8 +32,7 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    StudentListViewComponent
-    SingleAppareilComponent,
+    StudentListViewComponent,
     StudentDetailsComponent
   ],
   imports: [
