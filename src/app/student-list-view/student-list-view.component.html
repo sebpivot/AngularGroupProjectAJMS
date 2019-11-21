@@ -1,1 +1,20 @@
-<p>student-list-view works!</p>
+
+<div class="col-xs-12">
+  <h2>Liste des étudiants :</h2>
+  <ul class="list-group">
+    <li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': studentStatus === 'Validé',
+                'list-group-item-danger': studentStatus === 'Non validé'}">
+      <div style="width:20px;height:20px;background-color:red;"
+           *ngIf="studentStatus === 'non validé'"></div>
+      <h4 [ngStyle]="{color: getColor()}">Firstname : {{ studentFirstname }} -- Lastname
+        : {{ studentLastname }} -- Status : {{ getStatus() }}</h4>
+      <a [routerLink]="[studentId]">Details</a>
+
+
+
+
+  </ul>
+
+
+</div>

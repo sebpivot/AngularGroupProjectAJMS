@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
   { path: '', component: AppareilViewComponent },
-
+  { path: 'studentList', component: StudentListViewComponent}
 ];
 
 @NgModule({
