@@ -13,12 +13,14 @@ import { SingleAppareilComponent } from './single-appareil/single-appareil.compo
 import {HttpClientModule} from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import {StudentService} from './services/student.service';
+import { StudentListViewComponent } from './student-list-view/student-list-view.component';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
   { path: '', component: AppareilViewComponent },
+  { path: 'studentList', component: StudentListViewComponent}
   { path: 'students/:id', component: StudentDetailsComponent}
 
 ];
@@ -29,6 +31,8 @@ const appRoutes: Routes = [
     AppareilComponent,
     AuthComponent,
     AppareilViewComponent,
+    SingleAppareilComponent,
+    StudentListViewComponent
     SingleAppareilComponent,
     StudentDetailsComponent
   ],
