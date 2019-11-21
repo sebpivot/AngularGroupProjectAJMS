@@ -2,14 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
-import { AppareilService } from './services/appareil.service';
 import { AuthComponent } from './auth/auth.component';
-import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
-import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import {StudentService} from './services/student.service';
@@ -22,11 +18,10 @@ import { ProfComponent } from './prof/prof.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
 const appRoutes: Routes = [
-  { path: 'appareils', component: AppareilViewComponent },
-  { path: 'appareils/:id', component: SingleAppareilComponent},
+
   { path: 'auth', component: AuthComponent },
   { path: 'students', component: StudentListViewComponent},
-  { path: 'students/:id', component: StudentDetailsComponent}
+  { path: 'students/:id', component: StudentDetailsComponent},
 /*  { path: '', component: AppareilViewComponent },*/
   { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
@@ -39,10 +34,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    AppareilComponent,
     AuthComponent,
-    AppareilViewComponent,
-    SingleAppareilComponent,
     StudentListViewComponent,
     StudentDetailsComponent,
     ProfListViewComponent,
@@ -58,7 +50,6 @@ const appRoutes: Routes = [
 /*    HttpClientModule*/
   ],
   providers: [
-    AppareilService,
     AuthService,
     StudentService,
     TeacherService
