@@ -22,11 +22,11 @@ const appRoutes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'students', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
-/*  { path: '', component: AppareilViewComponent },*/
   { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
   { path: 'teachers', component: ProfListViewComponent},
   { path: 'teachers/:id', component: ProfDetailsComponent},
+  { path: 'main', component: MainPageComponent},
   { path: '', component: MainPageComponent}
 
 ];
