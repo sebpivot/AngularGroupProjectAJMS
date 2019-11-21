@@ -21,10 +21,7 @@ export class StudentListViewComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const  id = this.route.snapshot.params.id;
-    this.studentFirstname = this.studentService.getStudentById(+id).firstname;
-    this.studentLastname = this.studentService.getStudentById(+id).lastname;
-    this.studentStatus = this.studentService.getStudentById(+id).status;
+    this.students = this.studentService.students;
   }
 
 }
