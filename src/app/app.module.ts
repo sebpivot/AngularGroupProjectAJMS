@@ -11,6 +11,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import {HttpClientModule} from '@angular/common/http';
+import { StudentListViewComponent } from './student-list-view/student-list-view.component';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     AppareilComponent,
     AuthComponent,
     AppareilViewComponent,
-    SingleAppareilComponent
+    SingleAppareilComponent,
+    StudentListViewComponent
   ],
   imports: [
     BrowserModule,
