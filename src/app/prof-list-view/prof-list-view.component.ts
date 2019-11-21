@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TeacherService} from '../services/teacher.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-prof-list-view',
@@ -12,11 +14,12 @@ export class ProfListViewComponent implements OnInit {
   @Input() index;
   @Input() teacherId;
 
-  students: any[];
+  teachers: any[];
 
-  constructor() { }
+  constructor(private teacherService: TeacherService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.teachers = this.teacherService.teachers;
   }
 
 }

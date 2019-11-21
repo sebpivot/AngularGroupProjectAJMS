@@ -1,8 +1,12 @@
-<h2>List of professors :</h2>
-<ul class="list-group">
-
-  <h4>Firstname : {{ teacherFirstname }} </h4>
-  <h4>Lastname : {{ teacherLastname }} </h4>
-  <a [routerLink]="[teacherId]">Details</a>
-
-</ul>
+<div class="col-xs-12">
+  <h2>List of teachers</h2>
+  <ul class="list-group">
+    <app-prof *ngFor="let teacher of teachers, let i = index"
+              [teacherFirstname]="teacher.Firstname"
+              [teacherLastname]="teacher.Lastname"
+              [index]="i"
+              [id]="teacher.id"
+    >
+    </app-prof>
+  </ul>
+</div>

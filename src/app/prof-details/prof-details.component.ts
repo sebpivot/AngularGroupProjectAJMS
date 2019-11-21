@@ -17,8 +17,8 @@ export class ProfDetailsComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
-    this.teacherFirstname = this.teacherService.getTeacherById(+id).teacherFirstname;
-    this.teacherLastname = this.teacherService.getTeacherById(+id).teacherLastname;
+    this.teacherFirstname = this.teacherService.getTeacherById(+id).Firstname;
+    this.teacherLastname = this.teacherService.getTeacherById(+id).Lastname;
   }
 
 }

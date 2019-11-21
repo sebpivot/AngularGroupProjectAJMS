@@ -17,6 +17,7 @@ import { StudentListViewComponent } from './student-list-view/student-list-view.
 import { ProfListViewComponent } from './prof-list-view/prof-list-view.component';
 import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
+import { ProfComponent } from './prof/prof.component';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     StudentListViewComponent,
     StudentDetailsComponent,
     ProfListViewComponent,
-    ProfDetailsComponent
+    ProfDetailsComponent,
+    ProfComponent
   ],
   imports: [
     BrowserModule,

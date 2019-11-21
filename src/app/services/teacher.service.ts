@@ -14,13 +14,13 @@ export class TeacherService {
   teachers = [
     {
       id: 1,
-      teacherFirstname: 'Boris',
-      teacherLastname: 'Sauvage',
+      Firstname: 'Boris',
+      Lastname: 'Sauvage',
     },
     {
       id: 2,
-      teacherFirstname: 'Attif',
-      teacherLastname: 'Dad',
+      Firstname: 'Attif',
+      Lastname: 'Dad',
     },
   ];
 
