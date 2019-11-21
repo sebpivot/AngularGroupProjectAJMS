@@ -9,8 +9,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProfDetailsComponent implements OnInit {
 
-  teacherFirstname = 'Prenom';
-  teacherLastname = 'Nom';
+  teacherFirstname;
+  teacherLastname;
 
   constructor(private teacherService: TeacherService,
               private route: ActivatedRoute) { }
