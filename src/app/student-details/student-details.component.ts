@@ -9,17 +9,18 @@ import {StudentService} from '../services/student.service';
 })
 export class StudentDetailsComponent implements OnInit {
 
-  firstname = 'Prenom';
-  lastname = 'Nom';
+  studentFirstname = 'Prenom';
+  studentLastname = 'Nom';
+  studentStatus = 'Statut';
 
   constructor(private studentService: StudentService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
-    this.firstname = this.studentService.getStudentById(+id).firstname;
-    this.lastname = this.studentService.getStudentById(+id).lastname;
-
+    this.studentFirstname = this.studentService.getStudentById(+id).firstname;
+    this.studentLastname = this.studentService.getStudentById(+id).lastname;
+    this.studentStatus = this.studentService.getStudentById(+id).status;
   }
 
 }

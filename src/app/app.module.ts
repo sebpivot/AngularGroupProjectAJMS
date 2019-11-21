@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import {StudentService} from './services/student.service';
 import { StudentListViewComponent } from './student-list-view/student-list-view.component';
+import { StudentComponent } from './student/student.component';
 import { ProfListViewComponent } from './prof-list-view/prof-list-view.component';
 import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
@@ -24,6 +25,8 @@ const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: SingleAppareilComponent},
   { path: 'auth', component: AuthComponent },
+  { path: 'students', component: StudentListViewComponent},
+  { path: 'students/:id', component: StudentDetailsComponent}
 /*  { path: '', component: AppareilViewComponent },*/
   { path: 'studentList', component: StudentListViewComponent},
   { path: 'students/:id', component: StudentDetailsComponent},
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
     ProfListViewComponent,
     ProfDetailsComponent,
     ProfComponent,
-    MainPageComponent
+    MainPageComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

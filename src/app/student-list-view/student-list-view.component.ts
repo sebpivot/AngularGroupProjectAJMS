@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {StudentService} from '../services/student.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-student-list-view',
@@ -15,20 +17,11 @@ export class StudentListViewComponent implements OnInit {
 
   students: any[];
 
-  constructor() { }
+  constructor(private studentService: StudentService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.students = this.studentService.students;
   }
 
-  getStatus() {
-    return this.studentStatus;
-  }
-
-  getColor() {
-    if (this.studentStatus === 'Validé') {
-      return 'green';
-    } else if (this.studentStatus === 'Non validé') {
-      return 'red';
-    }
-  }
 }
