@@ -10,6 +10,7 @@ export class AppareilService {
   appareilsSubject = new Subject<any[]>();
 */
 
+
   appareils = [
     {
       id: 1,
@@ -52,6 +53,7 @@ export class AppareilService {
     );
     return appareil;
   }
+
 
 /*  saveAppareilsToServer() {
     this.httpClient
