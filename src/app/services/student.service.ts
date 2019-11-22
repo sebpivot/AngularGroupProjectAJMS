@@ -16,13 +16,13 @@ export class StudentService {
       id: 1,
       firstname: 'Julia',
       lastname: 'Gayral',
-      status: 'Non validé'
+      status: 'Non validated'
     },
     {
       id: 2,
       firstname: 'Sebastien',
       lastname: 'Pivot',
-      status: 'Validé',
+      status: 'Validated',
     },
   ];
 
