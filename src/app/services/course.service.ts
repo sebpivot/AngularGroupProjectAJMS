@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
 /*import {HttpClient} from '@angular/common/http';*/
 
-/*// @ts-ignore
-@Injectable*/
+// @ts-ignore
+@Injectable()
 export class CourseService {
 
     courseSubject = new Subject<any[]>();
@@ -12,12 +12,12 @@ export class CourseService {
     {
       id: 1,
       name: 'Math',
-      credit: '25',
+      credit: 25,
     },
     {
       id: 2,
       name: 'French',
-      credit: '50',
+      credit: 50,
     },
   ];
 

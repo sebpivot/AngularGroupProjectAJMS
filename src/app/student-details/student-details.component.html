@@ -1,6 +1,11 @@
 <body>
 <p> Firstname: {{ studentFirstname }} </p>
 <p> Lastname: {{ studentLastname}} </p>
+<ul class="list-group"> Courses: <app-course-detail *ngFor="let course of studentCourses, let i = index"
+                         [courseName]="course.name"
+                         [index]="i"
+                         [courseId]="course.id">
+</app-course-detail></ul>
 <p> Status: {{ studentStatus}} </p>
 <a routerLink="/students">Return to list</a>
 </body>
