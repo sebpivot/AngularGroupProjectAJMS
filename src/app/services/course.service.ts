@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class CourseService {
 
-    courseSubject = new Subject<any[]>();
+  courseSubject = new Subject<any[]>();
 
   courses = [
     {
@@ -26,8 +26,8 @@ export class CourseService {
   }
 
 
-    constructor(private httpClient: HttpClient) { }
-
+  constructor(private httpClient: HttpClient) {
+  }
 
 
   getCourseById(id: number) {
@@ -57,20 +57,16 @@ export class CourseService {
   }
 
   getCoursesFromServer() {
-      this.httpClient
-        .get<any[]>('https://localhost8080/gestion_ects/courses')
-        .subscribe(
-          (response) => {
-            this.courses = response;
-            this.emitCourseSubject();
-          },
-          (error) => {
-            console.log('Erreur ! : ' + error);
-          }
-        );
-    }
-
-  private emitCourseSubject() {
-
+    this.httpClient
+      .get<any[]>('https://localhost8080/gestion_ects/courses')
+      .subscribe(
+        (response) => {
+          this.courses = response;
+          this.emitCourseSubject();
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
   }
 }
