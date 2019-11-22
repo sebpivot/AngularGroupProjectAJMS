@@ -1,0 +1,20 @@
+<h2> Add a new course </h2>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="name">
+          Name of the course
+        </label>
+        <input type="text" id="name" class="form-control" name="name" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="credit">
+          ECTS
+        </label>
+        <input type="text" id="credit" class="form-control" name="credit" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

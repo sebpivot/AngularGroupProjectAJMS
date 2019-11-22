@@ -6,10 +6,7 @@ import {Subject} from 'rxjs';
 @Injectable*/
 export class CourseService {
 
-  /*
-
-    appareilsSubject = new Subject<any[]>();
-  */
+    courseSubject = new Subject<any[]>();
 
   courses = [
     {
@@ -24,6 +21,10 @@ export class CourseService {
     },
   ];
 
+  emitCourseSubject() {
+    this.courseSubject.next(this.courses.slice());
+  }
+
   /*
 
     constructor(private httpClient: HttpClient) { }
@@ -37,6 +38,22 @@ export class CourseService {
       }
     );
     return course;
+  }
+
+  // tslint:disable-next-line:variable-name
+  addCourse(name: string, credit: string) {
+    const courseObject = {
+      id: 0,
+      name: '',
+      credit: ''
+    };
+    courseObject.name = name;
+    // @ts-ignore
+    courseObject.credit = credit;
+    courseObject.id = this.courses[(this.courses.length - 1)].id + 1;
+    // @ts-ignore
+    this.courses.push(courseObject);
+    this.emitCourseSubject();
   }
 
   /*  saveAppareilsToServer() {
