@@ -17,9 +17,9 @@ export class CourseDetailComponent implements OnInit {
   constructor(private courseService: CourseService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    /*const id = this.route.snapshot.params.id;
     this.courseName = this.courseService.getCourseById(+id).name;
-    this.courseCredit = this.courseService.getCourseById(+id).credit;
+    this.courseCredit = this.courseService.getCourseById(+id).credit;*/
   }
 
 }
