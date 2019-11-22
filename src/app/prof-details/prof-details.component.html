@@ -1,6 +1,18 @@
 <body>
 
-<p> Firstname: {{ teacherFirstname }} </p>
-<p> Lastname: {{ teacherLastname }} </p>
+<h1> Welcome {{ teacherFirstname }} {{ teacherLastname }}</h1>
+
+
+<div class="jumbotron">
+  <p class="lead">If you want to see your courses </p>
+  <li routerLinkActive="active">
+    <a class="btn btn-primary btn-lg btn-block" href="#" role="button" routerLink="/courses">Click here</a>
+    <hr class="my-4">
+    <p>If you want to see the details of your students </p>
+  <li routerLinkActive="active">
+    <a class="btn btn-success btn-lg btn-block" href="#" role="button" routerLink="/students">Click here</a>
+</div>
+
+
 <a routerLink="/teachers"> Return to the list </a>
 </body>
