@@ -1,17 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
-/*import {HttpClient} from '@angular/common/http';*/
+import {HttpClient} from '@angular/common/http';
 
-/*// @ts-ignore
-@Injectable*/
+
+@Injectable()
 export class CourseService {
 
-  /*
+    coursesSubject = new Subject<any[]>();
 
-    appareilsSubject = new Subject<any[]>();
-  */
-
-  courses = [
+  private courses = [
     {
       id: 1,
       name: 'Math',
@@ -24,10 +21,9 @@ export class CourseService {
     },
   ];
 
-  /*
 
     constructor(private httpClient: HttpClient) { }
-  */
+
 
 
   getCourseById(id: number) {
@@ -39,16 +35,21 @@ export class CourseService {
     return course;
   }
 
-  /*  saveAppareilsToServer() {
+   getCoursesFromServer() {
       this.httpClient
-        .post('https://httpclient-demo.firebaseio.com/appareils.json', this.appareils)
+        .get<any[]>('https://localhost8080/gestion_ects/courses')
         .subscribe(
-          () => {
-            console.log('Enregistrement terminé !');
+          (response) => {
+            this.courses = response;
+            this.emitCoursesSubject();
           },
           (error) => {
             console.log('Erreur ! : ' + error);
           }
         );
-    }*/
+    }
+
+  private emitCoursesSubject() {
+
+  }
 }
