@@ -1,8 +1,7 @@
 <h2>Teacher n°{{ teacherId }}</h2>
 <ul class="list-group">
 
-  <p>Firstname : {{ teacherFirstname }} </p>
-  <p>Lastname : {{ teacherLastname }} </p>
-  <a [routerLink]="[teacherId]">Details</a>
+  <p>Name : {{ teacherFirstname }} {{ teacherLastname }} </p>
+  <a [routerLink]="[teacherId]">Click here to see more</a>
 
 </ul>

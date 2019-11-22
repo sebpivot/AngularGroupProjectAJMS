@@ -1,9 +1,10 @@
 <div class="col-xs-12">
+  <h2>Course n°{{ courseId }}</h2>
   <ul class="list-group">
 
-    <p> Name: {{ courseName }} </p>
-    <p> Credit: {{ courseCredit}} </p>
-    <a [routerLink]="[courseId]">Details</a>
+    <h3>{{ courseName }} </h3>
+    <p> Credit: {{ courseCredit }} </p>
+    <a class="btn btn-danger" href="#" role="button" routerLink="courses">Delete</a>
 
 
   </ul>
