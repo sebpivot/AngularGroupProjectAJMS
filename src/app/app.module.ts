@@ -17,6 +17,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseComponent } from './course/course.component';
 import {CourseService} from './services/course.service';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 const appRoutes: Routes = [
 
@@ -41,7 +43,10 @@ const appRoutes: Routes = [
     MainPageComponent,
     StudentComponent,
     CoursesListComponent,
-    CourseComponent
+    CourseComponent,
+    CourseDetailComponent,
+    CourseComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class StudentComponent implements OnInit {
   @Input() studentFirstname;
   @Input() studentLastname;
   @Input() studentStatus;
+  @Input() studentCourses;
   @Input() index;
   @Input() studentId;
 

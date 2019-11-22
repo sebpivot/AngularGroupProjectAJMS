@@ -9,9 +9,10 @@ import {StudentService} from '../services/student.service';
 })
 export class StudentDetailsComponent implements OnInit {
 
-  studentFirstname = 'Prenom';
-  studentLastname = 'Nom';
-  studentStatus = 'Statut';
+  studentFirstname;
+  studentLastname;
+  studentStatus;
+  studentCourses ;
 
   constructor(private studentService: StudentService,
               private route: ActivatedRoute) { }
@@ -21,6 +22,7 @@ export class StudentDetailsComponent implements OnInit {
     this.studentFirstname = this.studentService.getStudentById(+id).firstname;
     this.studentLastname = this.studentService.getStudentById(+id).lastname;
     this.studentStatus = this.studentService.getStudentById(+id).status;
+    this.studentCourses = this.studentService.getStudentById(+id).courses;
   }
 
 }
