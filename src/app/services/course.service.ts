@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 // @ts-ignore
 @Injectable()
 export class CourseService {
-  private baseUrl = 'http://localhost:8080/gestion_ects/courses';
+  private baseUrl = 'http://localhost:8080/gestion_ects/api/courses';
 
   constructor(private http: HttpClient) {
   }
@@ -15,7 +15,7 @@ export class CourseService {
   }
 
   createCourse(course: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, course);
+    return this.http.post(`${this.baseUrl}/teachers/1`, course);
   }
 
   updateCourse(id: number, value: any): Observable<Object> {
