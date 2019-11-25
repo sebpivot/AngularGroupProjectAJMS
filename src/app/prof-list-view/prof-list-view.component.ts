@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TeacherService} from '../services/teacher.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Observable} from "rxjs";
+import {Teacher} from "../model/Teacher";
 
 @Component({
   selector: 'app-prof-list-view',
@@ -11,15 +13,36 @@ export class ProfListViewComponent implements OnInit {
 
   @Input() teacherFirstname;
   @Input() teacherLastname;
+  @Input() teacherEmail;
   @Input() index;
   @Input() teacherId;
 
-  teachers: any[];
+  teachers: Observable<Teacher[]>;
 
-  constructor(private teacherService: TeacherService, private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.teachers = this.teacherService.teachers;
+  constructor(private teacherService: TeacherService,
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.teachers = this.teacherService.getTeachersList();
+  }
+
+  deleteTeacher(id: number) {
+    this.teacherService.deleteTeacher(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
+
+  teacherDetails(id: number) {
+    this.router.navigate(['details', id]);
+  }
 }

@@ -40,7 +40,4 @@ export class CoursesListComponent implements OnInit {
         },
         error => console.log(error));
   }
-  courseDetails(id: number) {
-    this.router.navigate(['details', id]);
-  }
 }

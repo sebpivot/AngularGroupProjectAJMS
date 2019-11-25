@@ -1,12 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
 import {CourseService} from './course.service';
-import {CourseComponent} from '../course/course.component';
-/*import {HttpClient} from '@angular/common/http';*/
 
 // @ts-ignore
 @Injectable()
 export class StudentService {
+  private baseUrl = 'http://localhost:8080/gestion_ects/api/students';
+
 
   /*
 
