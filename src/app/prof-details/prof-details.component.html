@@ -1,19 +1,18 @@
-<body>
+<h2>{{teacher.firstName}}{{teacher.lastName}} details</h2>
 
-<h1> Welcome {{ teacherFirstname }} {{ teacherLastname }}</h1>
-
-
-<div class="jumbotron">
-  <p class="lead">If you want to see your courses or add a new one</p>
-  <li routerLinkActive="active">
-    <a class="btn btn-primary btn-lg btn-block" href="#" role="button" routerLink="/courses">Click here</a>
-    <hr class="my-4">
-    <hr class="my-4">
-    <p>If you want to see the details of your students </p>
-  <li routerLinkActive="active">
-    <a class="btn btn-success btn-lg btn-block" href="#" role="button" routerLink="/students">Click here</a>
+<hr/>
+<div *ngIf="teacher">
+  <div>
+    <label><b>First Name: </b></label> {{teacher.firstName}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label> {{teacher.lastName}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{teacher.email}}
+  </div>
 </div>
 
-
-<a routerLink="/teachers"> Return to the list </a>
-</body>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>

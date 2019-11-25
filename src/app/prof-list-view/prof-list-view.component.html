@@ -16,8 +16,10 @@
         <td>{{teacher.firstName}}</td>
         <td>{{teacher.lastName}}</td>
         <td>{{teacher.email}}</td>
-        <td><button (click)="deleteTeacher(teacher.id)" class="btn btn-danger">Delete</button>
-        </td>
+<!--        <td><button (click)="teacherDetails(teacher.id)" class="btn btn-primary">Details</button>-->
+<!--        </td>-->
+        <a [routerLink]="[teacher.id]">Details</a>
+
       </tr>
       </tbody>
     </table>
