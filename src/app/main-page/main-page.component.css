@@ -1,8 +1,10 @@
 .jumbotron {
   text-align: center;
+
 }
 
 .display-4 {
-  color: crimson;
   text-align: center;
+  font-weight: bold;
 }
+

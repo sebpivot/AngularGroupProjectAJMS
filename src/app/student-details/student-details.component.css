@@ -1,0 +1,20 @@
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.state {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.course {
+  font-weight: bold;
+}
+
+body {
+  font-size: 20px;
+}
