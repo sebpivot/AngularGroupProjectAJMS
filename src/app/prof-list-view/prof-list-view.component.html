@@ -18,7 +18,8 @@
         <td>{{teacher.email}}</td>
 <!--        <td><button (click)="teacherDetails(teacher.id)" class="btn btn-primary">Details</button>-->
 <!--        </td>-->
-        <a [routerLink]="[teacher.id]">Details</a>
+        <td><button (click)="getTeacher(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default">Details</button>
+        </td>
 
       </tr>
       </tbody>

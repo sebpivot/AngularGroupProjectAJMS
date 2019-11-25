@@ -1,13 +1,21 @@
-<body>
-<p> Firstname: {{ studentFirstname }} </p>
-<p> Lastname: {{ studentLastname}} </p>
-<ul class="list-group"> Courses:
-  <app-course-detail *ngFor="let course of studentCourses, let i = index"
-                     [courseName]="course.name"
-                     [index]="i"
-                     [courseId]="course.id">
-  </app-course-detail>
-</ul>
-<p> Status: {{ studentStatus}} </p>
-<a routerLink="/students">Return to list</a>
-</body>
+<h2>{{student.firstName}}{{student.lastName}} details</h2>
+
+<hr/>
+<div *ngIf="student">
+  <div>
+    <label><b>First Name: </b></label> {{student.firstName}}
+  </div>
+  <br>
+  <div>
+    <label><b>Last Name: </b></label> {{student.lastName}}
+  </div>
+  <br>
+  <div>
+    <label><b>Email: </b></label> {{student.email}}
+  </div>
+  <br>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Student List</button><br>

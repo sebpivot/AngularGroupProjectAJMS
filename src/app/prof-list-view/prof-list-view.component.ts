@@ -47,4 +47,13 @@ export class ProfListViewComponent implements OnInit {
   teacherDetails(id: number) {
     this.router.navigate(['details', id]);
   }
+
+  getTeacher(id: number) {
+    this.teacherService.getTeacher(id)
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => console.log(error));
+  }
 }

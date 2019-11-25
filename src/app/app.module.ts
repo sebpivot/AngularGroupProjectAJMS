@@ -20,6 +20,7 @@ import {CourseService} from './services/course.service';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CourseCreateComponent } from './course-create/course-create.component';
 import { CourseUpdateComponent } from './course-update/course-update.component';
+import { StudentUpdateComponent } from './student-update/student-update.component';
 
 const appRoutes: Routes = [
 
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     CourseDetailComponent,
     CourseComponent,
     CourseCreateComponent,
-    CourseUpdateComponent
+    CourseUpdateComponent,
+    StudentUpdateComponent
   ],
   imports: [
     BrowserModule,
