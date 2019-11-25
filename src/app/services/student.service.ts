@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class StudentService {
   private baseUrl = 'http://localhost:8080/gestion_ects/api/students';
+  private id: any;
   constructor(private http: HttpClient) {
   }
 
@@ -28,4 +29,11 @@ export class StudentService {
   getStudentsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  getNewStudentsList(): Observable<any> {
+    // tslint:disable-next-line:prefer-const
+    let id;
+    return this.http.get(`${this.baseUrl}/${id}/students`);
+  }
 }
+;
