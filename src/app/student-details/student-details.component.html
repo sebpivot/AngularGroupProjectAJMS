@@ -1,26 +1,26 @@
-<h2>{{student.firstName}}{{student.lastName}} details</h2>
+<h2>{{student.firstName}} {{student.lastName}} details</h2>
 
 <hr/>
 <div *ngIf="student">
   <div>
-    <label><b>First Name: </b></label> {{student.firstName}}
+    <label class="title"><b>First Name: </b></label> {{student.firstName}}
   </div>
   <br>
   <div>
-    <label><b>Last Name: </b></label> {{student.lastName}}
+    <label class="title"><b>Last Name: </b></label> {{student.lastName}}
   </div>
   <br>
   <div>
-    <label><b>Email: </b></label> {{student.email}}
+    <label class="title"><b>Email: </b></label> {{student.email}}
   </div>
   <br>
 </div>
 
 <div>
-<label><b>Courses: </b></label>
+<label class="title"><b>Courses: </b></label>
 <tr *ngFor="let course of student.coursesDto">
-  <p><td>Name : {{course.name}}</td>
-  <p><td>ECTS : {{course.ects}}</td>
+  <p><td>-- {{course.name}}</td>
+  <p><td>{{course.ects}} ECTS</td>
   <br>
 </tr>
 </div>

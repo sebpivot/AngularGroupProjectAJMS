@@ -1,3 +1,13 @@
 h1, p {
   text-align: center;
 }
+
+h2 {
+  font-weight: bold;
+  font-size: 25px;
+  color: brown;
+}
+
+.title {
+  text-decoration: underline;
+}

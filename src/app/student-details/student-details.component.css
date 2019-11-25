@@ -1,9 +1,7 @@
-.title {
-  text-align: center;
+h2 {
   font-weight: bold;
   font-size: 25px;
-  font-style: italic;
-  text-decoration: underline;
+  color: brown;
 }
 
 .state {
@@ -18,3 +16,14 @@
 body {
   font-size: 20px;
 }
+
+.title {
+  text-decoration: underline;
+}
+
+.mat {
+  text-decoration: #48C9B0;
+}
+
+
+

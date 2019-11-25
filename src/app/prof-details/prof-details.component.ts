@@ -5,6 +5,7 @@ import {Teacher} from '../model/Teacher';
 import {Course} from '../model/Course';
 import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
+import {StudentService} from '../services/student.service';
 
 @Component({
   selector: 'app-prof-details',
@@ -16,11 +17,13 @@ export class ProfDetailsComponent implements OnInit {
  id: number;
  teacher: Teacher;
   courses: Observable<Course[]>;
+  students: Observable<Student[]>;
 
 
   constructor(private teacherService: TeacherService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private studentService: StudentService) { }
 
   ngOnInit() {
     this.teacher = new Teacher();
@@ -38,4 +41,11 @@ export class ProfDetailsComponent implements OnInit {
     this.router.navigate(['teachers']);
   }
 
+  getStudent(id: any) {
+    this.studentService.getNewStudentsList()
+      .subscribe(data => {
+        console.log(data);
+        this.teacher = data;
+      }, error => console.log(error));
+  }
 }
