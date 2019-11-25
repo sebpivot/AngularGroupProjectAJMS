@@ -9,6 +9,7 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Mail</th>
+        <th>Semester result</th>
       </tr>
       </thead>
       <tbody>
@@ -16,8 +17,15 @@
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}
         <td>{{student.email}}</td>
-        <!--<td><button (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
-        </td>-->
+
+        <div *ngIf="student.accepted===true ; else elseBlock">
+          <td style="color: green">Is Accepted</td>
+        </div>
+        <ng-template #elseBlock>
+          <td style="color: red">Is not Accepted</td>
+        </ng-template>
+
+
         <td><button (click)="getStudent(student.id)" [routerLink]="[student.id]" class="btn btn-default">Details</button>
         </td>
       </tr>

@@ -25,6 +25,12 @@
 </tr>
 </div>
 
+<div *ngIf="student.accepted===true ; else elseBlock">
+  <td style="color: green">Is  Accepted</td>
+</div>
+<ng-template #elseBlock>
+  <td style="color: red">Is not Accepted</td>
+</ng-template>
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
