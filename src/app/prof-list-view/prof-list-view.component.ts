@@ -3,6 +3,7 @@ import {TeacherService} from '../services/teacher.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from "rxjs";
 import {Teacher} from "../model/Teacher";
+import {Course} from '../model/Course';
 
 @Component({
   selector: 'app-prof-list-view',
@@ -18,6 +19,7 @@ export class ProfListViewComponent implements OnInit {
   @Input() teacherId;
 
   teachers: Observable<Teacher[]>;
+  courses: Observable<Course[]>;
 
   constructor(private teacherService: TeacherService,
               private route: ActivatedRoute,

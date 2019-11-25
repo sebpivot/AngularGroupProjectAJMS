@@ -13,7 +13,7 @@ export class StudentService {
   */
 
   students = [
-    {
+  /*  {
       id: 1,
       firstname: 'Julia',
       lastname: 'Gayral',
@@ -26,7 +26,7 @@ export class StudentService {
       lastname: 'Pivot',
       courses: [this.courseService.getCourseById(1)],
       status: 'Validated',
-    },
+    },*/
   ];
 
   /*

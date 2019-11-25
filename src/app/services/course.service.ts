@@ -11,7 +11,7 @@ export class CourseService {
   }
 
   getCourse(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`)
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   createCourse(course: Object): Observable<Object> {

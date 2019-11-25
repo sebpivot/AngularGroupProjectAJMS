@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'courses', component: CoursesListComponent},
   { path: 'addCourses', component: CourseCreateComponent},
   { path: 'updateCourses/:id', component: CourseUpdateComponent },
+/*  { path: 'teachers/:id/students', component: }*/
   { path: '', component: MainPageComponent}
 
 ];

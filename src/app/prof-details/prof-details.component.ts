@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {TeacherService} from '../services/teacher.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Teacher} from '../model/Teacher';
+import {Course} from '../model/Course';
+import {Observable} from 'rxjs';
+import {Student} from '../model/Student';
 
 @Component({
   selector: 'app-prof-details',
@@ -12,6 +15,8 @@ export class ProfDetailsComponent implements OnInit {
 
  id: number;
  teacher: Teacher;
+  courses: Observable<Course[]>;
+
 
   constructor(private teacherService: TeacherService,
               private router: Router,
