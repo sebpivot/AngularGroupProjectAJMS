@@ -28,4 +28,11 @@ export class StudentService {
   getStudentsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  getStudentsOfCourse(tId: number, cId: number) {
+    return this.http.get(`http://localhost:8080/gestion_ects/api/teachers/${tId}/courses/${cId}`);
+  }
+  getStudentsOfCourse2(cId: number) {
+    return this.http.get(`http://localhost:8080/gestion_ects/api/students/courses/${cId}`);
+  }
 }

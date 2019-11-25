@@ -5,6 +5,7 @@ import {Teacher} from '../model/Teacher';
 import {Course} from '../model/Course';
 import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
+import {StudentService} from "../services/student.service";
 
 @Component({
   selector: 'app-prof-details',
@@ -16,6 +17,7 @@ export class ProfDetailsComponent implements OnInit {
  id: number;
  teacher: Teacher;
   courses: Observable<Course[]>;
+  studentService: StudentService;
 
 
   constructor(private teacherService: TeacherService,

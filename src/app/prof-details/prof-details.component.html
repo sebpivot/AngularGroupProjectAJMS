@@ -19,7 +19,9 @@
     <tr *ngFor="let course of teacher.coursesDto">
       <p><td>Name : {{course.name}}</td>
       <p><td>ECTS : {{course.ects}}</td>
-      <a [routerLink]="[]">See the list of your students</a>
+      <td><button (click)="studentService.getStudentsOfCourse2(course.id)" [routerLink]="['/students/courses/'+course.id]" class="btn btn-default">Details</button>
+      </td>
+      <a [routerLink]="[course.id]">See the list of your students</a>
       <br>
     </tr>
   </div>
