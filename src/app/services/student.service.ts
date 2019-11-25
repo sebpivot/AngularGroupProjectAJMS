@@ -18,7 +18,7 @@ export class StudentService {
       id: 1,
       firstname: 'Julia',
       lastname: 'Gayral',
-      courses: [this.courseService.courses[0], this.courseService.getCourseById(2)],
+      courses: [this.courseService.getCourseById(1), this.courseService.getCourseById(2)],
       status: 'Non validated'
     },
     {
