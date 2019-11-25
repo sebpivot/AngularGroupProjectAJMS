@@ -1,9 +1,8 @@
 <div class="col-xs-12">
-  <h2>Student n°{{ studentId }}</h2>
+  <p class="student">Student {{ studentId }}</p>
   <ul class="list-group">
 
-    <p> Firstname: {{ studentFirstname }} </p>
-    <p> Lastname: {{ studentLastname}} </p>
+    <p> Name: {{ studentFirstname }} {{ studentLastname}} </p>
     <a [routerLink]="[studentId]">Details</a>
 
 
