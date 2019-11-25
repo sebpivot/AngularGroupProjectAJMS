@@ -16,6 +16,15 @@
   <br>
 </div>
 
+<div>
+<label><b>Courses: </b></label>
+<tr *ngFor="let course of student.coursesDto">
+  <p><td>Name : {{course.name}}</td>
+  <p><td>ECTS : {{course.ects}}</td>
+  <br>
+</tr>
+</div>
+
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
