@@ -18,7 +18,8 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseComponent } from './course/course.component';
 import {CourseService} from './services/course.service';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
-import { EditCourseComponent } from './edit-course/edit-course.component';
+import { CourseCreateComponent } from './course-create/course-create.component';
+import { CourseUpdateComponent } from './course-update/course-update.component';
 
 const appRoutes: Routes = [
 
@@ -28,6 +29,8 @@ const appRoutes: Routes = [
   { path: 'teachers/:id', component: ProfDetailsComponent},
   { path: 'main', component: MainPageComponent},
   { path: 'courses', component: CoursesListComponent},
+  { path: 'addCourses', component: CourseCreateComponent},
+  { path: 'updateCourses/:id', component: CourseUpdateComponent },
   { path: '', component: MainPageComponent}
 
 ];
@@ -46,14 +49,16 @@ const appRoutes: Routes = [
     CourseComponent,
     CourseDetailComponent,
     CourseComponent,
-    EditCourseComponent
+    CourseCreateComponent,
+    CourseUpdateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-/*    HttpClientModule*/
+    HttpClientModule
   ],
+  exports: [RouterModule],
   providers: [
     StudentService,
     CourseService,

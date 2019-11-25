@@ -1,71 +1,32 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
-/*import {HttpClient} from '@angular/common/http';*/
+import {Observable, Subject} from 'rxjs';
+import {HttpClient} from "@angular/common/http";
 
 // @ts-ignore
 @Injectable()
 export class CourseService {
+  private baseUrl = 'http://localhost:8080/gestion_ects/courses';
 
-    courseSubject = new Subject<any[]>();
-
-  courses = [
-    {
-      id: 1,
-      name: 'Math',
-      credit: 25,
-    },
-    {
-      id: 2,
-      name: 'French',
-      credit: 50,
-    },
-  ];
-
-  emitCourseSubject() {
-    this.courseSubject.next(this.courses.slice());
+  constructor(private http: HttpClient) {
   }
 
-  /*
-
-    constructor(private httpClient: HttpClient) { }
-  */
-
-
-  getCourseById(id: number) {
-    const course = this.courses.find(
-      (c) => {
-        return c.id === id;
-      }
-    );
-    return course;
+  getCourse(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`)
   }
 
-  // tslint:disable-next-line:variable-name
-  addCourse(name: string, credit: string) {
-    const courseObject = {
-      id: 0,
-      name: '',
-      credit: ''
-    };
-    courseObject.name = name;
-    // @ts-ignore
-    courseObject.credit = credit;
-    courseObject.id = this.courses[(this.courses.length - 1)].id + 1;
-    // @ts-ignore
-    this.courses.push(courseObject);
-    this.emitCourseSubject();
+  createCourse(course: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, course);
   }
 
-  /*  saveAppareilsToServer() {
-      this.httpClient
-        .post('https://httpclient-demo.firebaseio.com/appareils.json', this.appareils)
-        .subscribe(
-          () => {
-            console.log('Enregistrement terminé !');
-          },
-          (error) => {
-            console.log('Erreur ! : ' + error);
-          }
-        );
-    }*/
+  updateCourse(id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
+  }
+
+  deleteCourse(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, {responseType: 'text'});
+  }
+
+  getCoursesList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
 }
