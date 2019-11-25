@@ -3,5 +3,5 @@ export class Student {
   firstName: string;
   lastName: string;
   email: string;
-  isAccepted: boolean;
+  accepted: boolean;
 }
