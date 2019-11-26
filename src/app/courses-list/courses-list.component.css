@@ -3,3 +3,7 @@ h2 {
   color: white;
   font-weight: bold;
 }
+
+tbody {
+  text-transform: capitalize;
+}
