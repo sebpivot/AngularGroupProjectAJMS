@@ -5,7 +5,7 @@ import {Teacher} from '../model/Teacher';
 import {Course} from '../model/Course';
 import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
-import {StudentService} from "../services/student.service";
+import {StudentService} from '../services/student.service';
 
 @Component({
   selector: 'app-prof-details',
@@ -39,5 +39,4 @@ export class ProfDetailsComponent implements OnInit {
   list() {
     this.router.navigate(['teachers']);
   }
-
 }

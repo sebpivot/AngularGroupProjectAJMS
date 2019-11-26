@@ -7,4 +7,6 @@ export class Student {
   email: string;
   isAccepted: boolean;
   coursesDto: Course[];
+  accepted: boolean;
+  validation: Boolean;
 }

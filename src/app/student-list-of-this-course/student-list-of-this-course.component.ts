@@ -15,8 +15,7 @@ import {Students} from "../model/Students";
 export class StudentListOfThisCourseComponent implements OnInit {
   idCourse: number;
   course: Course;
-  students: Observable<Student[]>;
-  studentsTest: Students;
+  students: Student[];
 
   constructor(private studentService: StudentService,
               private courseService: CourseService,
@@ -29,12 +28,11 @@ export class StudentListOfThisCourseComponent implements OnInit {
   }
 
   private reloadData() {
-    this.studentsTest= new Students();
     this.idCourse = this.route.snapshot.params.id;
     this.studentService.getStudentsOfCourse1(this.idCourse)
       .subscribe(data => {
         console.log(data);
-        this.studentsTest = data;
+        this.students = data;
       }, error => console.log(error));
   }
 }

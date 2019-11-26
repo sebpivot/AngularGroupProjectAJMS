@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Student} from "../model/Student";
 
 // @ts-ignore
 @Injectable()
@@ -9,8 +10,8 @@ export class StudentService {
   constructor(private http: HttpClient) {
   }
 
-  getStudent(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getStudent(id: number): Observable<Student> {
+    return this.http.get<Student>(`${this.baseUrl}/${id}`);
   }
 
   createStudent(student: Object): Observable<Object> {
@@ -25,14 +26,15 @@ export class StudentService {
     return this.http.delete(`${this.baseUrl}/${id}`, {responseType: 'text'});
   }
 
-  getStudentsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getStudentsList(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.baseUrl}`);
   }
 
   getStudentsOfCourse2(tId: number, cId: number) {
     return this.http.get(`http://localhost:8080/gestion_ects/api/teachers/${tId}/courses/${cId}`);
   }
-  getStudentsOfCourse1(cId: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/gestion_ects/api/students/courses/${cId}`);
+  getStudentsOfCourse1(cId: number): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.baseUrl}/courses/${cId}`);
   }
 }
+;

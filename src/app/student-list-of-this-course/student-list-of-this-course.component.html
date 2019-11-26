@@ -1,8 +1,10 @@
 <div>
   <label><b>Students on this course: </b></label>
-  <tr *ngFor="let student of studentsTest.students">
+  <tr *ngFor="let student of students">
     <p><td>First name : {{student.firstName}}</td>
     <p><td>Last name : {{student.lastName}}</td>
+    <p><td>Email : {{student.email}}</td>
+    <p><td>Validated : {{student.validation}}</td>
     <br>
   </tr>
 </div>
