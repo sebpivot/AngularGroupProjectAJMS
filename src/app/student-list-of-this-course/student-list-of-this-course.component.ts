@@ -5,6 +5,7 @@ import {StudentService} from "../services/student.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Course} from "../model/Course";
 import {CourseService} from "../services/course.service";
+import {Students} from "../model/Students";
 
 @Component({
   selector: 'app-student-list-of-this-course',
@@ -14,7 +15,8 @@ import {CourseService} from "../services/course.service";
 export class StudentListOfThisCourseComponent implements OnInit {
   idCourse: number;
   course: Course;
-  students: Object;
+  students: Observable<Student[]>;
+  studentsTest: Students;
 
   constructor(private studentService: StudentService,
               private courseService: CourseService,
@@ -27,11 +29,12 @@ export class StudentListOfThisCourseComponent implements OnInit {
   }
 
   private reloadData() {
+    this.studentsTest= new Students();
     this.idCourse = this.route.snapshot.params.id;
-    this.studentService.getStudentsOfCourse(this.idCourse)
+    this.studentService.getStudentsOfCourse1(this.idCourse)
       .subscribe(data => {
         console.log(data);
-        this.students = data;
+        this.studentsTest = data;
       }, error => console.log(error));
   }
 }

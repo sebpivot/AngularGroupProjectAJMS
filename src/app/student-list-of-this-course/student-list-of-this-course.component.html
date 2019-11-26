@@ -1,8 +1,8 @@
 <div>
-  <label><b>Students: </b></label>
-  <tr *ngFor="let student of students">
-    <p><td>First name : {{student.valueOf()}}</td>
-    <p><td>Last name : {{student.valueOf()}}</td>
+  <label><b>Students on this course: </b></label>
+  <tr *ngFor="let student of studentsTest.students">
+    <p><td>First name : {{student.firstName}}</td>
+    <p><td>Last name : {{student.lastName}}</td>
     <br>
   </tr>
 </div>
