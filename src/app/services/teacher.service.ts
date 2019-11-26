@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Teacher} from "../model/Teacher";
+import {Student} from "../model/Student";
 
 @Injectable()
 export class TeacherService {
@@ -9,8 +11,8 @@ export class TeacherService {
   constructor(private http: HttpClient) {
   }
 
-  getTeacher(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`)
+  getTeacher(id: number): Observable<Teacher> {
+    return this.http.get<Teacher>(`${this.baseUrl}/${id}`)
   }
 
   createTeacher(teacher: Object): Observable<Object> {

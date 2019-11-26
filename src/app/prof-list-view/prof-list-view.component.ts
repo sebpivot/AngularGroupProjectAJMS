@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TeacherService} from '../services/teacher.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from "rxjs";
 import {Teacher} from "../model/Teacher";
-import {Course} from '../model/Course';
+import {Course} from "../model/Course";
+import {TeacherService} from "../services/teacher.service";
+
 
 @Component({
   selector: 'app-prof-list-view',
