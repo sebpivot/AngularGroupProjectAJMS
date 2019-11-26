@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Teachers List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let teacher of teachers | async">
+        <td>{{teacher.firstName}}</td>
+        <td>{{teacher.lastName}}</td>
+        <td>{{teacher.email}}</td>
+<!--        <td><button (click)="teacherDetails(teacher.id)" class="btn btn-primary">Details</button>-->
+<!--        </td>-->
+        <td><button (click)="getTeacher(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default">Details</button>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<h2>{{student.firstName}} {{student.lastName}} details</h2>
+
+<hr/>
+<div *ngIf="student">
+  <div>
+    <label class="title"><b>First Name: </b></label> {{student.firstName}}
+  </div>
+  <br>
+  <div>
+    <label class="title"><b>Last Name: </b></label> {{student.lastName}}
+  </div>
+  <br>
+  <div>
+    <label class="title"><b>Email: </b></label> {{student.email}}
+  </div>
+  <br>
+</div>
+
+<div>
+<label class="title"><b>Courses: </b></label>
+<tr *ngFor="let course of student.coursesDto">
+  <p><td>-- {{course.name}}</td>
+  <p><td>{{course.ects}} ECTS</td>
+  <br>
+</tr>
+</div>
+
+<div *ngIf="student.accepted===true ; else elseBlock">
+  <td style="color: green">Is  Accepted</td>
+</div>
+<ng-template #elseBlock>
+  <td style="color: red">Is not Accepted</td>
+</ng-template>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Student List</button><br>

@@ -1,0 +1,29 @@
+h2 {
+  font-weight: bold;
+  font-size: 25px;
+  color: brown;
+}
+
+.state {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.course {
+  font-weight: bold;
+}
+
+body {
+  font-size: 20px;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+.mat {
+  text-decoration: #48C9B0;
+}
+
+
+

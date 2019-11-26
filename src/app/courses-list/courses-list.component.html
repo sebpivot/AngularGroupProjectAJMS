@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Courses List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ects</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let course of courses | async">
+        <td>{{course.name}}</td>
+        <td>{{course.ects}}</td>
+        <td><button (click)="deleteCourse(course.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

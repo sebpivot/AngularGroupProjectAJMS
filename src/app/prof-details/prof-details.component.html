@@ -1,0 +1,31 @@
+<h2>{{teacher.firstName}}{{teacher.lastName}} details</h2>
+
+<hr/>
+<div *ngIf="teacher">
+  <div>
+    <label class="title"><b>First Name: </b></label> {{teacher.firstName}}
+  </div>
+  <br>
+  <div>
+    <label class="title"><b>Last Name: </b></label> {{teacher.lastName}}
+  </div>
+  <br>
+  <div>
+    <label class="title"><b>Email: </b></label> {{teacher.email}}
+  </div>
+  <br>
+  <div>
+    <label class="title"><b>Courses: </b></label>
+    <tr *ngFor="let course of teacher.coursesDto">
+      <p><td>Name : {{course.name}}</td>
+      <p><td>ECTS : {{course.ects}}</td>
+      <br>
+      <td><button (click)="getStudent(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default">Details</button>
+ <br>
+    </tr>
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Teachers List</button><br>
