@@ -14,8 +14,8 @@ export class CourseService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createCourse(course: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/teachers/1`, course);
+  createCourse(course: Object, id: number): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/teachers/${id}`, course);
   }
 
   updateCourse(id: number, value: any): Observable<Object> {

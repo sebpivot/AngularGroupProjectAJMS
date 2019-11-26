@@ -18,6 +18,7 @@ export class ProfDetailsComponent implements OnInit {
  teacher: Teacher;
   courses: Observable<Course[]>;
   students: Observable<Student[]>;
+  routerLink: any;
 
 
   constructor(private teacherService: TeacherService,
@@ -47,5 +48,9 @@ export class ProfDetailsComponent implements OnInit {
         console.log(data);
         this.teacher = data;
       }, error => console.log(error));
+  }
+
+  addCourse(id: number) {
+    this.router.navigate(['teachers', id, 'addCourses']);
   }
 }
