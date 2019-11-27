@@ -7,15 +7,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import {StudentService} from './services/student.service';
-import { StudentListViewComponent } from './student-list-view/student-list-view.component';
-import { StudentComponent } from './student/student.component';
+import {StudentListViewComponent} from "./student-list-view/student-list-view.component";
 import { ProfListViewComponent } from './prof-list-view/prof-list-view.component';
 import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
-import { ProfComponent } from './prof/prof.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
-import { CourseComponent } from './course/course.component';
 import {CourseService} from './services/course.service';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CourseCreateComponent } from './course-create/course-create.component';
@@ -23,6 +20,7 @@ import { CourseUpdateComponent } from './course-update/course-update.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
 import { ProfUpdateComponent } from './prof-update/prof-update.component';
 import { StudentListOfThisCourseComponent } from './student-list-of-this-course/student-list-of-this-course.component';
+
 
 const appRoutes: Routes = [
 
@@ -48,13 +46,9 @@ const appRoutes: Routes = [
     StudentDetailsComponent,
     ProfListViewComponent,
     ProfDetailsComponent,
-    ProfComponent,
     MainPageComponent,
-    StudentComponent,
     CoursesListComponent,
-    CourseComponent,
     CourseDetailComponent,
-    CourseComponent,
     CourseCreateComponent,
     CourseUpdateComponent,
     StudentUpdateComponent,
