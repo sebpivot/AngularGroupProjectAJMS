@@ -18,9 +18,10 @@
 
 <div>
 <label class="title"><b>Courses: </b></label>
-<tr *ngFor="let course of student.coursesDto">
+<tr *ngFor="let course of student.coursesDto index as i">
   <p><td>-- {{course.name}}</td>
   <p><td>{{course.ects}} ECTS</td>
+  <p><td>Validated: {{student.validations[i]}} </td>
   <br>
 </tr>
 </div>
