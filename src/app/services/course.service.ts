@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
+import {Course} from "../model/Course";
 
 // @ts-ignore
 @Injectable()
@@ -10,23 +11,23 @@ export class CourseService {
   constructor(private http: HttpClient) {
   }
 
-  getCourse(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getCourse(id: number): Observable<Course> {
+    return this.http.get<Course>(`${this.baseUrl}/${id}`);
   }
 
   createCourse(course: Object, id: number): Observable<Object> {
     return this.http.post(`${this.baseUrl}/teachers/${id}`, course);
   }
 
-  updateCourse(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateCourse(id: number, value: any): Observable<Course> {
+    return this.http.put<Course>(`${this.baseUrl}/${id}`, value);
   }
 
   deleteCourse(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, {responseType: 'text'});
   }
 
-  getCoursesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getCoursesList(): Observable<Course[]> {
+    return this.http.get<Course[]>(`${this.baseUrl}`);
   }
 }
