@@ -57,4 +57,5 @@ export class ProfListViewComponent implements OnInit {
         },
         error => console.log(error));
   }
+
 }

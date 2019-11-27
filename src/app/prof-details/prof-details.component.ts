@@ -17,12 +17,14 @@ export class ProfDetailsComponent implements OnInit {
  id: number;
  teacher: Teacher;
   courses: Observable<Course[]>;
-  studentService: StudentService;
+  students: Observable<Student[]>;
+  routerLink: any;
 
 
   constructor(private teacherService: TeacherService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private studentService: StudentService) { }
 
   ngOnInit() {
     this.teacher = new Teacher();
@@ -38,5 +40,17 @@ export class ProfDetailsComponent implements OnInit {
 
   list() {
     this.router.navigate(['teachers']);
+  }
+
+  getStudent(id: any) {
+    this.studentService.getNewStudentsList()
+      .subscribe(data => {
+        console.log(data);
+        this.teacher = data;
+      }, error => console.log(error));
+  }
+
+  addCourse(id: number) {
+    this.router.navigate(['teachers', id, 'addCourses']);
   }
 }
