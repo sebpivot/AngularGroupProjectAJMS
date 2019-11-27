@@ -29,5 +29,13 @@ tbody {
   text-transform: capitalize;
 }
 
+.not {
+  color: red;
+}
+
+.is {
+  color: green;
+}
+
 
 
