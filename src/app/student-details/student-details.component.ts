@@ -17,6 +17,9 @@ export class StudentDetailsComponent implements OnInit {
   id: number;
   student: Student;
   students: Observable<Student[]>;
+  course: Course;
+  courses: Course[];
+  sum: number;
 
 
   constructor(private studentService: StudentService,
@@ -35,8 +38,19 @@ export class StudentDetailsComponent implements OnInit {
       }, error => console.log(error));
   }
 
+
   list() {
     this.router.navigate(['students']);
   }
 
+  getTotal() {
+    this.courses = this.student.coursesDto;
+    this.sum = 0;
+    for (let i = 0; i < this.courses.length; i++) {
+      if (this.student.validations[i] === true) {
+        this.sum += this.courses[i].ects;
+      }
+    }
+    return this.sum;
+  }
 }

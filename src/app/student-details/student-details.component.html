@@ -16,6 +16,7 @@
   <br>
 </div>
 
+<tbody>
 <div>
 <label class="title"><b>Courses: </b></label>
 <tr *ngFor="let course of student.coursesDto index as i">
@@ -24,14 +25,20 @@
   <p><td>Validated: {{student.validations[i]}} </td>
   <br>
 </tr>
-</div>
+  <p><td>Total Credits : {{ getTotal() }}</td>
 
+</div>
+</tbody>
 <div *ngIf="student.accepted===true ; else elseBlock">
-  <td style="color: green">Is  Accepted</td>
+  <td style="color: green">Is Accepted</td>
+  <br><td style="color: green">Total Credits : </td>
 </div>
 <ng-template #elseBlock>
   <td style="color: red">Is not Accepted</td>
 </ng-template>
+<br>
+<b>A semester is valided for 20 ECTS</b>
+<br>
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
