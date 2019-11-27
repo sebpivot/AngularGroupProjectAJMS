@@ -8,6 +8,5 @@ export class Student {
   isAccepted: boolean;
   coursesDto: Course[];
   accepted: boolean;
-  accepted: boolean;
-  validation: Boolean;
+  validation: boolean;
 }

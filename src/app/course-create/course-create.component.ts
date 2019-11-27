@@ -38,7 +38,7 @@ export class CourseCreateComponent implements OnInit {
     this.save();
   }
   gotoList() {
-    this.router.navigate(['/courses']);
+    this.router.navigate(['/teachers', this.idTeacher]);
   }
 }
 
