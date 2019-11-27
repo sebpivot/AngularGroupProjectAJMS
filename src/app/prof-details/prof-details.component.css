@@ -11,3 +11,7 @@ h2 {
 .title {
   text-decoration: underline;
 }
+
+tbody {
+  text-transform: capitalize;
+}

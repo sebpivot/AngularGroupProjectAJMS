@@ -25,5 +25,9 @@ body {
   text-decoration: #48C9B0;
 }
 
+tbody {
+  text-transform: capitalize;
+}
+
 
 

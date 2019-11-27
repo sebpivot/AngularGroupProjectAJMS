@@ -16,6 +16,7 @@
   <br>
 </div>
 
+<tbody>
 <div>
 <label class="title"><b>Courses: </b></label>
 <tr *ngFor="let course of student.coursesDto index as i">
@@ -24,8 +25,9 @@
   <p><td>Validated: {{student.validations[i]}} </td>
   <br>
 </tr>
-</div>
 
+</div>
+</tbody>
 <div *ngIf="student.accepted===true ; else elseBlock">
   <td style="color: green">Is  Accepted</td>
 </div>
