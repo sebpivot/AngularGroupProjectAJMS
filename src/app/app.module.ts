@@ -28,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'students/:id', component: StudentDetailsComponent},
   { path: 'teachers', component: ProfListViewComponent},
   { path: 'teachers/:id', component: ProfDetailsComponent},
+  { path: 'students/:sId/courses/:cId', component: StudentUpdateComponent},
   { path: 'students/courses/:id', component: StudentListOfThisCourseComponent},
   { path: 'main', component: MainPageComponent},
   { path: 'courses', component: CoursesListComponent},

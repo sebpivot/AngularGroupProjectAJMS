@@ -5,6 +5,7 @@
     <p><td>Last name : {{student.lastName}}</td>
     <p><td>Email : {{student.email}}</td>
     <p><td>Validated : {{student.validation}}</td>
+    <td><button (click)="updateStudent(student.id)" class="btn btn-warning">Validate</button>
     <br>
   </tr>
 </div>

@@ -29,9 +29,11 @@ export class CourseCreateComponent implements OnInit {
   save() {
     this.idTeacher = this.route.snapshot.params.id;
     this.courseService.createCourse(this.course, this.idTeacher)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.course = new Course();
-    this.gotoList();
+      .subscribe(data => {
+        console.log(data);
+        this.gotoList();
+        },
+          error => console.log(error));
   }
   onSubmit() {
     this.submitted = true;

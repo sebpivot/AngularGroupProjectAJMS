@@ -19,8 +19,8 @@ export class StudentService {
     return this.http.post(`${this.baseUrl}`, student);
   }
 
-  updateStudent(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  patchStudent(sId: number,cId: number, value: any): Observable<Object> {
+    return this.http.patch(`${this.baseUrl}/${sId}/courses/${cId}`, value);
   }
 
   deleteStudent(id: number): Observable<any> {
@@ -29,10 +29,6 @@ export class StudentService {
 
   getStudentsList(): Observable<Student[]> {
     return this.http.get<Student[]>(`${this.baseUrl}`);
-  }
-
-  getStudentsOfCourse2(tId: number, cId: number) {
-    return this.http.get(`http://localhost:8080/gestion_ects/api/teachers/${tId}/courses/${cId}`);
   }
   getStudentsOfCourse1(cId: number): Observable<Student[]> {
     return this.http.get<Student[]>(`${this.baseUrl}/courses/${cId}`);

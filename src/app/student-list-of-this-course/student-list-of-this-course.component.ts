@@ -13,7 +13,7 @@ import {Students} from "../model/Students";
   styleUrls: ['./student-list-of-this-course.component.css']
 })
 export class StudentListOfThisCourseComponent implements OnInit {
-  idCourse: number;
+  cId: number;
   course: Course;
   students: Student[];
 
@@ -28,11 +28,15 @@ export class StudentListOfThisCourseComponent implements OnInit {
   }
 
   private reloadData() {
-    this.idCourse = this.route.snapshot.params.id;
-    this.studentService.getStudentsOfCourse1(this.idCourse)
+    this.cId = this.route.snapshot.params.id;
+    this.studentService.getStudentsOfCourse1(this.cId)
       .subscribe(data => {
         console.log(data);
         this.students = data;
       }, error => console.log(error));
+  }
+
+  updateStudent(id: number) {
+    this.router.navigate(['students',id,'courses',this.cId]);
   }
 }
