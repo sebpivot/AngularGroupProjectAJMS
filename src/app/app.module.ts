@@ -7,7 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import {StudentService} from './services/student.service';
-import {StudentListViewComponent} from "./student-list-view/student-list-view.component";
+import {FilterStudents, StudentListViewComponent} from './student-list-view/student-list-view.component';
 import { ProfListViewComponent } from './prof-list-view/prof-list-view.component';
 import {TeacherService} from './services/teacher.service';
 import { ProfDetailsComponent } from './prof-details/prof-details.component';
@@ -54,7 +54,8 @@ const appRoutes: Routes = [
     CourseUpdateComponent,
     StudentUpdateComponent,
     ProfUpdateComponent,
-    StudentListOfThisCourseComponent
+    StudentListOfThisCourseComponent,
+    FilterStudents
   ],
   imports: [
     BrowserModule,
