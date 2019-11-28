@@ -1,5 +1,36 @@
 h2 {
   text-align: center;
-  color: white;
+  color: #014336;
   font-weight: bold;
+}
+
+.research {
+  color: #014336;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.title {
+  font-size: 20px;
+  color: #014336;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 15px;
+}
+
+.list {
+  font-size: 16px;
+  color: #014336;
+}
+
+.notacc {
+  color: red;
+  font-weight: bold;
+}
+
+.acc {
+  color: green;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 8px;
 }

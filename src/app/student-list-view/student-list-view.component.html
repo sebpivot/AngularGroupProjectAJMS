@@ -1,12 +1,15 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Students List</h2>
+<br>
+<br>
+<div class="panel panel-primary" style="background-color: #7DCEA0; border-color:#7DCEA0">
+  <div class="panel-heading" style="background-color: #7DCEA0; border-color:#7DCEA0">
+    <h2>List of students</h2>
   </div>
-  <input [(ngModel)]="filterStudentFirstName">
+  <p class="research">Research bar :
+  <input [(ngModel)]="filterStudentFirstName" placeholder="Enter a name ..."></p>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
-      <tr>
+      <tr class="title">
         <th>First name</th>
         <th>Last name</th>
         <th>Mail</th>
@@ -14,20 +17,20 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let student of students | filterStudentByFirstName:filterStudentFirstName">
+      <tr class="list" *ngFor="let student of students | filterStudentByFirstName:filterStudentFirstName">
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}
         <td>{{student.email}}</td>
 
         <div *ngIf="student.accepted===true ; else elseBlock">
-          <td style="color: green">Is Accepted</td>
+          <td class="acc">Is Accepted</td>
         </div>
         <ng-template #elseBlock>
-          <td style="color: red">Is not Accepted</td>
+          <td class="notacc">Is not Accepted</td>
         </ng-template>
 
 
-        <td><button (click)="getStudent(student.id)" [routerLink]="[student.id]" class="btn btn-default">Details</button>
+        <td><button (click)="getStudent(student.id)" [routerLink]="[student.id]" class="btn btn-default" style="background-color: #014336; color: white">Details</button>
         </td>
       </tr>
       </tbody>

@@ -1,11 +1,13 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Teachers List</h2>
+<br>
+<br>
+<div class="panel panel-primary" style="background-color: #F9E79F; border-color:#F9E79F">
+  <div class="panel-heading" style="background-color: #F9E79F; border-color:#F9E79F" >
+    <h2>List of Teachers</h2>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
-      <tr>
+      <tr class="title">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -18,7 +20,7 @@
         <td>{{teacher.email}}</td>
 <!--        <td><button (click)="teacherDetails(teacher.id)" class="btn btn-primary">Details</button>-->
 <!--        </td>-->
-        <td><button (click)="getTeacher(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default">Details</button>
+        <td><button (click)="getTeacher(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default" style="background-color: #922B21; color: white">Details</button>
         </td>
 
       </tr>

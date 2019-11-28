@@ -1,7 +1,24 @@
-nav {
-  background-color: #48C9B0;
+header, nav {
+  color: white;
+  background-color: #014336;
+  border: black;
 }
+
+header {
+  padding-top: 10px;
+}
+
 
 .back {
   background-color: #FAFCFC;
+}
+
+.jumbotron {
+  text-align: center;
+
+}
+
+.display-4 {
+  text-align: center;
+  font-weight: bold;
 }

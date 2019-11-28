@@ -1,5 +1,13 @@
 h2 {
   text-align: center;
-  color: white;
+  color: #922B21;
   font-weight: bold;
+}
+
+.title {
+  font-size: 20px;
+  color: #922B21;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 15px;
 }

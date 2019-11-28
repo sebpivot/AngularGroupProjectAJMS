@@ -1,7 +1,15 @@
 h2 {
   font-weight: bold;
+  font-size: 30px;
+  color: #014336;
+  text-decoration: underline;
+
+}
+
+h3 {
+  font-weight: bold;
   font-size: 25px;
-  color: brown;
+  color: #014336;
 }
 
 .state {
@@ -18,7 +26,10 @@ body {
 }
 
 .title {
-  text-decoration: underline;
+  color: #014336;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 .mat {
@@ -31,10 +42,28 @@ tbody {
 
 .not {
   color: red;
+  font-weight: bold;
 }
 
 .is {
   color: green;
+  font-weight: bold;
+}
+
+.notacc {
+  color: red;
+  font-weight: bold;
+}
+
+.acc {
+  color: green;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 8px;
+}
+
+.cadre {
+  border-color: #922B21;
 }
 
 
