@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Student} from "../model/Student";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Student} from '../model/Student';
 
 // @ts-ignore
 @Injectable()
@@ -15,11 +15,11 @@ export class StudentService {
     return this.http.get<Student>(`${this.baseUrl}/${id}`);
   }
 
-  createStudent(student: Object): Observable<Object> {
+  createStudent(student: any): Observable<any> {
     return this.http.post(`${this.baseUrl}`, student);
   }
 
-  patchStudent(sId: number,cId: number, value: any): Observable<Object> {
+  patchStudent(sId: number, cId: number, value: any): Observable<any> {
     return this.http.patch(`${this.baseUrl}/${sId}/courses/${cId}`, value);
   }
 
@@ -40,4 +40,3 @@ export class StudentService {
     return this.http.get(`${this.baseUrl}/${id}/students`);
   }
 }
-;
