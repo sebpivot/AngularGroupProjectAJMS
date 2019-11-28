@@ -48,11 +48,18 @@ tbody {
 .is {
   color: green;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .notacc {
   color: red;
   font-weight: bold;
+}
+
+.notaccept {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .acc {
@@ -62,8 +69,21 @@ tbody {
   padding-left: 8px;
 }
 
-.cadre {
-  border-color: #922B21;
+.condition {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.col-sm-3 {
+  padding-top: 160px;
+}
+
+
+.total {
+  font-weight: bold;
+  padding-left: 70px;
+  font-size: 20px;
 }
 
 

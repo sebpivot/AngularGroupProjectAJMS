@@ -18,11 +18,8 @@
         <td>{{teacher.firstName}}</td>
         <td>{{teacher.lastName}}</td>
         <td>{{teacher.email}}</td>
-<!--        <td><button (click)="teacherDetails(teacher.id)" class="btn btn-primary">Details</button>-->
-<!--        </td>-->
         <td><button (click)="getTeacher(teacher.id)" [routerLink]="[teacher.id]" class="btn btn-default" style="background-color: #922B21; color: white">Details</button>
         </td>
-
       </tr>
       </tbody>
     </table>

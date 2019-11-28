@@ -1,11 +1,24 @@
 <div>
-  <label><b>Students on this course: </b></label>
+  <h3>Students of this course</h3>
+  <br>
+  <br>
   <tr *ngFor="let student of students">
-    <p><td>First name : {{student.firstName}}</td>
-    <p><td>Last name : {{student.lastName}}</td>
-    <p><td>Email : {{student.email}}</td>
-    <p><td>Validated : {{student.validation}}</td>
-    <td><button (click)="updateStudent(student.id)" class="btn btn-warning">Validate</button>
+    <p><td class="title">First name : {{student.firstName}}</td>
+    <p><td class="title">Last name : {{student.lastName}}</td>
+    <p><td class="title">Email : {{student.email}}</td>
+<!--    <p><td class="title">{{student.validation}}</td>-->
+    <div *ngIf="student.validation===true ; else elseBlock">
+      <td class="acc">Validated</td>
+    </div>
+    <ng-template #elseBlock>
+      <td class="notacc">Not validated</td>
+    </ng-template>
+    <button (click)="updateStudent(student.id)" class="btn btn-default">Change the status</button>
     <br>
+      <br>
+      <br>
   </tr>
+  <br>
+  <button (click)="list()" class="btn btn-primary">Back to the list of teachers</button><br>
 </div>
+

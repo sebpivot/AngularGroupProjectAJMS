@@ -16,16 +16,17 @@
   <br>
 </div>
 
+
 <div class="col-sm-5">
 <div class="panel panel-primary" style="background-color: #7DCEA0; border-color:#7DCEA0">
   <div class="panel-heading" style="background-color: #7DCEA0; border-color:#7DCEA0">
-    <h3>List of courses of the semester</h3>
+    <h3>List of courses</h3>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
       <tr class="title">
-        <th>Title</th>
+        <th>Course</th>
         <th>ECTS</th>
         <th>Status</th>
       </tr>
@@ -44,33 +45,36 @@
       </tr>
       </tbody>
     </table>
+<!--    <td class="total"> Total = {{ getTotal() }} ECTS</td><br>-->
   </div>
 </div>
-</div>
 
-
-<div class="col-sm-5">
-  <div class="panel panel-primary" style="background-color: #7DCEA0; border-color:#7DCEA0">
-    <div class="panel-heading" style="background-color: #7DCEA0; border-color:#7DCEA0">
-<div class="col-sm-10">
-<div *ngIf="student.accepted===true ; else elseBlock">
-  <p><td> Total Credits : {{ getTotal() }}</td>
-  <td class="is">Is Accepted</td>
-</div>
-<ng-template #elseBlock>
-  <p><td class="not"> Total Credits : {{ getTotal() }}</td> <br>
-  <td class="not">Is not Accepted</td>
-</ng-template>
-<br>
-
-</div>
+<div>
+  <div *ngIf="student.accepted===true ; else elseBlock">
+    <div class="col-sm-11">
+      <div class="panel panel-primary" style="background-color: #58D68D; border-color:#58D68D">
+        <div class="panel-heading" style="background-color: #58D68D; border-color:#58D68D">
+          <td class="is">SEMESTER VALIDATED = {{ getTotal() }} ECTS (20 ECTS are needed)</td>
+        </div>
+      </div>
     </div>
   </div>
-<b>A semester is valided for 20 ECTS</b>
-<br>
-<br>
-<br>
+  <ng-template #elseBlock>
+    <div class="col-sm-12">
+      <div class="panel panel-primary" style="background-color: #F5B7B1; border-color:#F5B7B1">
+        <div class="panel-heading" style="background-color: #F5B7B1; border-color:#F5B7B1">
+          <td class="notaccept">SEMESTER NOT VALIDATED = {{ getTotal() }} ECTS (20 ECTS are needed)</td>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>
 
-<button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
+</div>
+<div class="bouton">
+  <button (click)="list()" class="btn btn-primary">Back to the list of students</button><br>
+</div>
+
+
+
 

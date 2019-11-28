@@ -6,6 +6,7 @@ import {Course} from '../model/Course';
 import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
 import {StudentService} from '../services/student.service';
+import {CourseService} from '../services/course.service';
 
 @Component({
   selector: 'app-prof-details',
@@ -21,7 +22,8 @@ export class ProfDetailsComponent implements OnInit {
   routerLink: any;
 
 
-  constructor(private teacherService: TeacherService,
+  constructor(private courseService: CourseService,
+              private teacherService: TeacherService,
               private router: Router,
               private route: ActivatedRoute,
               private studentService: StudentService) { }
@@ -52,5 +54,19 @@ export class ProfDetailsComponent implements OnInit {
 
   addCourse(id: number) {
     this.router.navigate(['teachers', id, 'addCourses']);
+  }
+
+  reloadData() {
+    this.courses = this.courseService.getCoursesList();
+  }
+
+  deleteCourse(id: number) {
+    this.courseService.deleteCourse(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
   }
 }

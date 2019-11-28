@@ -23,6 +23,10 @@ export class StudentListOfThisCourseComponent implements OnInit {
               private router: Router) {
   }
 
+  list() {
+    this.router.navigate(['teachers']);
+  }
+
   ngOnInit() {
     this.reloadData();
   }
@@ -37,6 +41,6 @@ export class StudentListOfThisCourseComponent implements OnInit {
   }
 
   updateStudent(id: number) {
-    this.router.navigate(['students',id,'courses',this.cId]);
+    this.router.navigate(['students', id , 'courses' , this.cId]);
   }
 }
