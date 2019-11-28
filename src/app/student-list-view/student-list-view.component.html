@@ -2,6 +2,7 @@
   <div class="panel-heading">
     <h2>Students List</h2>
   </div>
+  <input [(ngModel)]="filterStudentFirstName">
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
@@ -13,7 +14,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let student of students | async">
+      <tr *ngFor="let student of students | filterStudentByFirstName:filterStudentFirstName">
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}
         <td>{{student.email}}</td>
