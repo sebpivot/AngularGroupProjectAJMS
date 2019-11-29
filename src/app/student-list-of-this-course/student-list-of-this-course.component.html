@@ -1,24 +1,42 @@
 <div>
-  <h3>Students of this course</h3>
-  <br>
-  <br>
-  <tr *ngFor="let student of students">
-    <p><td class="title">First name : {{student.firstName}}</td>
-    <p><td class="title">Last name : {{student.lastName}}</td>
-    <p><td class="title">Email : {{student.email}}</td>
-<!--    <p><td class="title">{{student.validation}}</td>-->
-    <div *ngIf="student.validation===true ; else elseBlock">
-      <td class="acc">Validated</td>
+  <div class="panel panel-primary" style="background-color: #F9E79F; border-color:#F9E79F">
+    <div class="panel-heading" style="background-color: #F9E79F; border-color:#F9E79F" >
+          <h3>Students of this course</h3>
+          <br>
+          <br>
+
+      <table class="table table-striped">
+        <thead>
+        <tr class="title">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Status</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let student of students">
+          <td style="color: black">{{student.firstName}}</td>
+          <td style="color: black"> {{student.lastName}}</td>
+          <td style="color: black"> {{student.email}}</td>
+
+          <div *ngIf="student.validation===true ; else elseBlock">
+            <td class="acc">Validated</td>
+          </div>
+          <ng-template #elseBlock>
+            <td class="notacc">Not validated</td>
+
+          </ng-template>
+          <td> <button (click)="updateStudent(student.id)" class="btn btn-default" >Change the status</button></td>
+        </tr>
+        <br>
+
+        </tbody>
+      </table>
+
     </div>
-    <ng-template #elseBlock>
-      <td class="notacc">Not validated</td>
-    </ng-template>
-    <button (click)="updateStudent(student.id)" class="btn btn-default">Change the status</button>
-    <br>
-      <br>
-      <br>
-  </tr>
-  <br>
+  </div>
+
   <button (click)="list()" class="btn btn-primary">Back to the list of teachers</button><br>
 </div>
-
