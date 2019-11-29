@@ -36,7 +36,7 @@ export class CoursesListComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data);
-/*          this.reloadData();*/
+          this.reloadData();
         },
         error => console.log(error));
   }

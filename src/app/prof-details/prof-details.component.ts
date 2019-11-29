@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
 import {StudentService} from '../services/student.service';
 import {CourseService} from '../services/course.service';
+import {runInThisContext} from 'vm';
 
 @Component({
   selector: 'app-prof-details',
@@ -29,6 +30,7 @@ export class ProfDetailsComponent implements OnInit {
               private studentService: StudentService) { }
 
   ngOnInit() {
+    this.reloadData();
     this.teacher = new Teacher();
 
     this.id = this.route.snapshot.params.id;
@@ -65,8 +67,12 @@ export class ProfDetailsComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data);
-          this.reloadData();
+          this.ngOnInit();
+          /*this.router.navigate(['teachers', this.teacher.id]);*/
         },
         error => console.log(error));
+  }
+  gotoList() {
+    this.router.navigate(['/teachers', this.id]);
   }
 }
