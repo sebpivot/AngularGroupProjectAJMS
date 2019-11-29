@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
 import {StudentService} from '../services/student.service';
 import {CourseService} from '../services/course.service';
-import {runInThisContext} from 'vm';
+
 
 @Component({
   selector: 'app-prof-details',
