@@ -1,5 +1,5 @@
 .title {
-  color: #014336;
+  color: #922B21;
   font-weight: bold;
   font-size: 20px;
   padding-left: 15px;
@@ -8,7 +8,7 @@
 h3 {
   font-weight: bold;
   font-size: 25px;
-  color: #014336;
+  color: #922B21;
 }
 
 .notacc {
@@ -21,4 +21,11 @@ h3 {
   color: green;
   font-weight: bold;
   font-size: 25px;
+  padding-top: 10px;
+  padding-left: 8px;
+  padding-right: 40px;
+}
+
+.info{
+  color: black;
 }

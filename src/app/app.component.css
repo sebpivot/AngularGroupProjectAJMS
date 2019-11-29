@@ -9,8 +9,8 @@ header {
 }
 
 
-.back {
-  background-color: #FAFCFC;
+body {
+  background-color: red;
 }
 
 .jumbotron {
@@ -22,3 +22,5 @@ header {
   text-align: center;
   font-weight: bold;
 }
+
+
