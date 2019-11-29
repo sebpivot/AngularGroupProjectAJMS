@@ -16,6 +16,7 @@ export class StudentListOfThisCourseComponent implements OnInit {
   cId: number;
   course: Course;
   students: Student[];
+  courses: Course[];
 
   constructor(private studentService: StudentService,
               private courseService: CourseService,
