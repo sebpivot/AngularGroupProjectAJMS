@@ -15,40 +15,44 @@
   </div>
   <br>
 
-    <div class="col-sm-5">
-      <div class="panel panel-primary" style="background-color: #F9E79F; border-color:#F9E79F">
-        <div class="panel-heading" style="background-color: #F9E79F; border-color:#F9E79F">
+  <div class="col-sm-5">
+    <div class="panel panel-primary" style="background-color: #F9E79F; border-color:#F9E79F">
+      <div class="panel-heading" style="background-color: #F9E79F; border-color:#F9E79F">
         <h3>List of your courses</h3>
-        </div>
-        <div class="panel-body">
-          <table class="table table-striped">
-            <thead>
-            <tr class="title">
-              <th>Course</th>
-              <th>ECTS</th>
-              <th>Students</th>
-              <th></th>
-            </tr>
-            </thead>
-            <tbody>
-    <tr *ngFor="let course of teacher.coursesDto">
-      <td>{{course.name}}</td>
-      <td>{{course.ects}}</td>
-      <td><button [routerLink]="['/students/courses/'+course.id]" class="btn btn-default">Details</button>
-      <td><button (click)="deleteCourse(course.id)" class="btn btn-danger">Delete</button>
-      </td>
-      <br>
-    </tr>
-    <br>
-    <button (click)="addCourse(teacher.id)" class="btn btn-warning" style="background-color: #922B21; color: white">Add a new course</button>
-            </tbody>
-          </table>
-        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+          <tr class="title">
+            <th>Course</th>
+            <th>ECTS</th>
+            <th>Students</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let course of teacher.coursesDto">
+            <td>{{course.name}}</td>
+            <td>{{course.ects}}</td>
+            <td>
+              <button (click)="goToShowCourse(course.id)" class="btn btn-default">Details</button>
+            <td>
+              <button (click)="deleteCourse(course.id)" class="btn btn-danger">Delete</button>
+            </td>
+            <br>
+          </tr>
+          <br>
+          <button (click)="goToAddCourse(teacher.id)" class="btn btn-warning"
+                  style="background-color: #922B21; color: white">Add a new course
+          </button>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>
 
-<button (click)="list()" class="btn btn-primary">Back to the list of teachers</button><br>
+<button (click)="goToTeacherlist()" class="btn btn-primary">Back to the list of teachers</button><br>
 
 
 

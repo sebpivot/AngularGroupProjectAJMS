@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TeacherService} from '../services/teacher.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Teacher} from '../model/Teacher';
-import {Course} from '../model/Course';
 import {Observable} from 'rxjs';
 import {Student} from '../model/Student';
 import {StudentService} from '../services/student.service';
@@ -16,63 +15,48 @@ import {CourseService} from '../services/course.service';
 })
 export class ProfDetailsComponent implements OnInit {
 
- id: number;
- teacher: Teacher;
-  courses: Observable<Course[]>;
+  id: number;
+  teacher: Teacher;
   students: Observable<Student[]>;
-  routerLink: any;
-
 
   constructor(private courseService: CourseService,
               private teacherService: TeacherService,
               private router: Router,
               private route: ActivatedRoute,
-              private studentService: StudentService) { }
+              private studentService: StudentService) {
+  }
 
   ngOnInit() {
-    this.reloadData();
-    this.teacher = new Teacher();
-
     this.id = this.route.snapshot.params.id;
 
     this.teacherService.getTeacher(this.id)
       .subscribe(data => {
-      console.log(data);
-      this.teacher = data;
-    }, error => console.log(error));
-}
-
-  list() {
-    this.router.navigate(['teachers']);
-  }
-
-  getStudent(id: any) {
-    this.studentService.getNewStudentsList()
-      .subscribe(data => {
-        console.log(data);
         this.teacher = data;
       }, error => console.log(error));
   }
 
-  addCourse(id: number) {
+  goToTeacherlist() {
+    this.router.navigate(['teachers']);
+  }
+
+  goToAddCourse(id: number) {
     this.router.navigate(['teachers', id, 'addCourses']);
   }
 
-  reloadData() {
-    this.courses = this.courseService.getCoursesList();
-  }
-
-  deleteCourse(id: number) {
-    this.courseService.deleteCourse(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.ngOnInit();
-          /*this.router.navigate(['teachers', this.teacher.id]);*/
+  deleteCourse(courseId: number) {
+    this.courseService.deleteCourse(courseId)
+      .subscribe(data => {
+          this.teacher.coursesDto = this.teacher.coursesDto.filter(course => course.id !== courseId);
         },
         error => console.log(error));
+
   }
+
   gotoList() {
     this.router.navigate(['/teachers', this.id]);
+  }
+
+  goToShowCourse(courseId: number) {
+    this.router.navigate(['/students/courses/', courseId]);
   }
 }
